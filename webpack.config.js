@@ -17,7 +17,7 @@
 */
 
 const path = require("path");
-const entryFile = path.resolve(__dirname, "client", "src", "index.js");
+const entryFile = path.resolve(__dirname, "client", "src", "index.tsx");
 const outputDir = path.resolve(__dirname, "client", "dist");
 
 const webpack = require("webpack");
@@ -49,6 +49,18 @@ module.exports = {
         ],
       },
       {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "ts-loader",
+            options: {
+              configFile: "tsconfig.json",
+            },
+          },
+        ],
+      },
+      {
         test: /\.(png|svg|jpg|gif)$/,
         use: [
           {
@@ -59,7 +71,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ["*", ".js", ".jsx"],
+    extensions: ["*", ".js", ".jsx", ".ts", ".tsx"],
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],
   devServer: {

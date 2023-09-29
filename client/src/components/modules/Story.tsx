@@ -1,11 +1,11 @@
 import React from "react";
 
-/**
- * @param create_id, String
- * @param create_name, String
- * @param content, String
- */
-const Story = (props) => {
+type StoryProps = {
+  create_name: string;
+  content: string;
+  create_id: string;
+};
+const Story = (props: StoryProps) => {
   return (
     <div>
       <h2>{props.create_name}</h2>

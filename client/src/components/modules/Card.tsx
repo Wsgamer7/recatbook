@@ -2,15 +2,22 @@ import React from "react";
 
 import Comment from "./Comment";
 import Story from "./Story";
+
+import { Comment_type, Story_type } from "../../../../type";
 /**
  * @param story, story object
  * @param comments, a array of comment object
  * @param userId
  */
-const Card = (props) => {
+type CardProps = {
+  story: Story_type;
+  comments: Comment_type[];
+  userId: string;
+};
+const Card = (props: CardProps) => {
   const story = props.story;
-  const commentsArray2Component = (comments) => {
-    return comments.map((comment) => (
+  const commentsArray2Component = (comments: Comment_type[]) => {
+    return comments.map((comment: Comment_type) => (
       <div>
         <Comment
           create_id={comment.create_id}

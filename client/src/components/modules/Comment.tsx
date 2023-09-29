@@ -1,11 +1,11 @@
 import React from "react";
 
-/**
- * @param create_id, String
- * @param create_name, String
- * @param content, String
- */
-const Comment = (props) => {
+type CommentProps = {
+  create_id: string;
+  create_name: string;
+  content: string;
+};
+const Comment = (props: CommentProps) => {
   return (
     <div>
       <h2>{props.create_name}</h2>
