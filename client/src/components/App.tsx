@@ -1,9 +1,11 @@
 import React from "react";
 
 import Home from "./pages/Home";
+import "./App.css";
+import "../utilities.css";
 const App = () => {
   return (
-    <div>
+    <div className="App-container">
       <Home />
     </div>
   );

@@ -1,0 +1,25 @@
+.Story-creatorName {
+  flex-shrink: 0;
+
+  color: var(--black-text);
+
+  /* poster_name */
+  font-family: Outfit;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.Story-content {
+  flex-shrink: 0;
+
+  color: var(--black-text);
+  font-family: Outfit;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.Story-container {
+  flex-shrink: 0;
+}

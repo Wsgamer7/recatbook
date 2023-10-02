@@ -1,0 +1,10 @@
+.Card-container {
+  width: 30rem;
+  flex-shrink: 0;
+
+  padding: 1.5rem 5.12rem;
+  border-radius: 0.5625rem;
+  border: 1px solid #a6a9aa;
+  background: var(--write-card);
+  margin: 1% auto;
+}

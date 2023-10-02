@@ -1,5 +1,6 @@
 import React from "react";
 
+import "./Story.css";
 type StoryProps = {
   create_name: string;
   content: string;
@@ -7,9 +8,9 @@ type StoryProps = {
 };
 const Story = (props: StoryProps) => {
   return (
-    <div>
-      <h2>{props.create_name}</h2>
-      <div>{props.content}</div>
+    <div className="Story-container">
+      <div className="Story-creatorName">{props.create_name}</div>
+      <div className="Story-content">{props.content}</div>
     </div>
   );
 };

@@ -12,12 +12,12 @@ type Comment = Story;
 const story1: Story = {
   create_id: "0",
   create_name: "wzy",
-  content: "渣男",
+  content: "zhanan",
 };
 const story2: Story = {
   create_id: "1",
   create_name: "ws",
-  content: "已婚",
+  content: "marrried",
 };
 
 const comment1: Comment = {
