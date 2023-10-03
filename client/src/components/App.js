@@ -7,8 +7,11 @@ import "./App.css";
 import "../utilities.css";
 const App = () => {
   return (
-    <div className="App-container">
-      <NavBar userId="null" />
+    <div>
+      <div className="App-NavBarContainer">
+        <NavBar userId="null" />
+      </div>
+      <div className="App-NavBarSpacer" />
       <Router>
         <Home path="/" />
       </Router>

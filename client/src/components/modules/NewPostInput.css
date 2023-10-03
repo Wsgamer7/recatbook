@@ -1,0 +1,9 @@
+.NewPostInput {
+  display: flex;
+}
+.NewPostInput-input {
+  color: var(--black-text);
+}
+.NewPostInput-submit {
+  background-color: var(--blueButton);
+}

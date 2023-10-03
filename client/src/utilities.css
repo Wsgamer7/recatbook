@@ -20,23 +20,17 @@
   --grey-backgroud: #dae0e6;
   --gery-inputer: #f6f7f8;
   --black-text: #1c1c1c;
-  color: #000;
-  font-family: Oxygen;
-  font-size: 1.625rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
   --gery-text: #878a8c;
-  color: #000;
-  font-family: Oxygen;
-  font-size: 1.625rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  --blueButoon: #0079d3;
+  --blueButton: #0079d3;
 
   --xs: 4px;
   --s: 8px;
   --m: 16px;
   --l: 24px;
+}
+body {
+  background-color: var(--grey-backgroud);
+}
+.u-marginAuto {
+  margin: auto;
 }
