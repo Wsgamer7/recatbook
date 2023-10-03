@@ -1,0 +1,32 @@
+.NavBar-container {
+  height: 2rem;
+  display: flex;
+  background-color: var(--write-card);
+}
+
+.NavBar-linkContainer {
+  display: flex;
+}
+.NavBar-brand {
+  color: var(--black-text);
+
+  /* Brand */
+  font-family: Peralta;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.NavBar-link {
+  color: var(--black-text);
+
+  /* navBar */
+  font-family: Outfit;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration: none;
+  margin-left: 1rem;
+  margin-top: 0.38rem;
+}
