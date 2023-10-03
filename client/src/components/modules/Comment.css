@@ -1,0 +1,24 @@
+.Comment-creatorName {
+  color: var(--black-text);
+
+  /* commenter_name */
+  font-family: Oxygen;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.Comment-content {
+  color: var(--black-text);
+  font-family: Oxygen;
+  font-size: 1.625rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.Comment-container {
+  margin-top: 1%;
+  margin-left: 2%;
+}

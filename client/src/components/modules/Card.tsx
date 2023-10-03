@@ -2,6 +2,8 @@ import React from "react";
 
 import Comment from "./Comment";
 import Story from "./Story";
+import "./Card.css";
+import { NewComment } from "./NewPostInput";
 
 import { Comment_type, Story_type } from "../../../../type";
 /**
@@ -29,8 +31,10 @@ const Card = (props: CardProps) => {
   };
   const comment_components = commentsArray2Component(props.comments);
   return (
-    <div>
+    <div className="Card-container">
       <Story create_id={story.create_id} create_name={story.create_name} content={story.content} />
+      <NewComment />
+      <hr />
       {comment_components}
     </div>
   );

@@ -1,6 +1,8 @@
 import React from "react";
 
 import Card from "../modules/Card";
+import { NewStory } from "../modules/NewPostInput";
+import "./Home.css";
 
 type Story = {
   create_name: string;
@@ -12,12 +14,12 @@ type Comment = Story;
 const story1: Story = {
   create_id: "0",
   create_name: "wzy",
-  content: "渣男",
+  content: "zhanan",
 };
 const story2: Story = {
   create_id: "1",
   create_name: "ws",
-  content: "已婚",
+  content: "marrried",
 };
 
 const comment1: Comment = {
@@ -33,6 +35,11 @@ const comment2: Comment = {
 const Home = () => {
   return (
     <div>
+      <div className="Home-storyInputContainer">
+        <NewStory />
+      </div>
+      <Card story={story1} comments={[comment1, comment2]} userId="0" />
+      <Card story={story1} comments={[comment1, comment2]} userId="0" />
       <Card story={story1} comments={[comment1, comment2]} userId="0" />
       <Card story={story2} comments={[comment1]} userId="0" />
     </div>
