@@ -1,12 +1,18 @@
 import React from "react";
 
-import "./Story.css";
+import "./SingleStory.css";
+type Story = {
+  _id: string;
+  create_name: string;
+  content: string;
+  create_id: string;
+};
 type StoryProps = {
   create_name: string;
   content: string;
   create_id: string;
 };
-const Story = (props: StoryProps) => {
+const SingleStory = (props: StoryProps) => {
   return (
     <div className="Story-container">
       <div className="Story-creatorName">{props.create_name}</div>
@@ -14,4 +20,4 @@ const Story = (props: StoryProps) => {
     </div>
   );
 };
-export default Story;
+export { Story, SingleStory };

@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { post } from "../../utilities";
+import { Story } from "../modules/SingleStory";
+import { Comment } from "../modules/SingleComment";
 import "./NewPostInput.css";
 
 type NewPostInputProps = {
@@ -31,17 +34,26 @@ const NewPostInput = (props: NewPostInputProps) => {
     </div>
   );
 };
-
-const NewStory = () => {
+type NewStoryProps = {
+  addNewStory: (story: Story) => void;
+};
+const NewStory = (props: NewStoryProps) => {
   const addStory = (value: string) => {
-    console.log(value + "have submit story");
+    const body = { content: value };
+    post("/api/story", body).then((story: Story) => props.addNewStory(story));
   };
   return <NewPostInput defaultContent="add your story here" onSubmit={addStory} />;
 };
 
-const NewComment = () => {
+type NewCommentProps = {
+  story_id: string;
+  addNewComment: (comment: Comment) => void;
+};
+
+const NewComment = (props: NewCommentProps) => {
   const addComment = (value: string) => {
-    console.log(value + "have submit Comment");
+    const body = { content: value, story_id: props.story_id };
+    post("/api/comment", body).then((comment: Comment) => props.addNewComment(comment));
   };
   return <NewPostInput defaultContent="add your comment here" onSubmit={addComment} />;
 };

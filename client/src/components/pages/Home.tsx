@@ -1,47 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import Card from "../modules/Card";
 import { NewStory } from "../modules/NewPostInput";
 import "./Home.css";
+import { Story } from "../modules/SingleStory";
+import { get } from "../../utilities";
 
-type Story = {
-  create_name: string;
-  content: string;
-  create_id: string;
-};
-type Comment = Story;
+type HomeProps = { userId: string };
+const Home = (props: HomeProps) => {
+  const [stories, setStories] = useState<Story[]>([]);
+  const [cards, setCards] = useState<JSX.Element[] | null>(null);
 
-const story1: Story = {
-  create_id: "0",
-  create_name: "wzy",
-  content: "zhanan",
-};
-const story2: Story = {
-  create_id: "1",
-  create_name: "ws",
-  content: "marrried",
-};
-
-const comment1: Comment = {
-  create_id: "1",
-  create_name: "lyf",
-  content: "1",
-};
-const comment2: Comment = {
-  create_id: "2",
-  create_name: "lyf",
-  content: "5",
-};
-const Home = () => {
+  //get all stories when render Home
+  useEffect(() => {
+    get("/api/stories").then((storyObjs: Story[]) => {
+      setStories(storyObjs);
+    });
+  }, []);
+  const addNewStory = (storyObj: Story) => {
+    setStories([storyObj, ...stories]);
+  };
+  useEffect(() => {
+    const haveStory = stories.length > 0;
+    if (haveStory) {
+      setCards(
+        stories.map((story) => (
+          <Card story={story} userId={props.userId} key={`Card_${story._id}`} />
+        ))
+      );
+    } else {
+      setCards([<div>No stories yet</div>]);
+    }
+  }, [stories, props.userId]);
   return (
     <div>
       <div className="Home-storyInputContainer">
-        <NewStory />
+        <NewStory addNewStory={addNewStory} />
       </div>
-      <Card story={story1} comments={[comment1, comment2]} userId="0" />
-      <Card story={story1} comments={[comment1, comment2]} userId="0" />
-      <Card story={story1} comments={[comment1, comment2]} userId="0" />
-      <Card story={story2} comments={[comment1]} userId="0" />
+      {cards}
     </div>
   );
 };

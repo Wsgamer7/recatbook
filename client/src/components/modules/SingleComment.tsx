@@ -1,12 +1,19 @@
 import React from "react";
 
-import "./Comment.css";
+import "./SingleComment.css";
+type Comment = {
+  create_name: string;
+  content: string;
+  create_id: string;
+  story_id: string;
+  _id: string;
+};
 type CommentProps = {
   create_id: string;
   create_name: string;
   content: string;
 };
-const Comment = (props: CommentProps) => {
+const SingleComment = (props: CommentProps) => {
   return (
     <div className="Comment-container">
       <div className="Comment-creatorName">{props.create_name}</div>
@@ -14,4 +21,4 @@ const Comment = (props: CommentProps) => {
     </div>
   );
 };
-export default Comment;
+export { Comment, SingleComment };
