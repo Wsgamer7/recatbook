@@ -23,7 +23,7 @@ const Card = (props: CardProps) => {
   const [commentJSXs, setCommentJSXs] = useState<JSX.Element[] | null>(null);
   const story: Story = props.story;
   useEffect(() => {
-    get("/api/comment", { story_id: story._id }).then((commentObjs: Comment[]) => {
+    get("/api/comments", { story_id: story._id }).then((commentObjs: Comment[]) => {
       setComments(commentObjs);
     });
   }, []);
@@ -51,7 +51,7 @@ const Card = (props: CardProps) => {
         create_name={story.create_name}
         content={story.content}
       />
-      {props.userId && <NewComment />}
+      {props.userId && <NewComment addNewComment={addNewComment} story_id={props.story._id} />}
       {comments.length > 0 && <hr />}
       {commentJSXs}
     </div>

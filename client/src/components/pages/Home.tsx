@@ -23,7 +23,11 @@ const Home = (props: HomeProps) => {
   useEffect(() => {
     const haveStory = stories.length > 0;
     if (haveStory) {
-      setCards(stories.map((story) => <Card story={story} userId={props.userId} />));
+      setCards(
+        stories.map((story) => (
+          <Card story={story} userId={props.userId} key={`Card_${story._id}`} />
+        ))
+      );
     } else {
       setCards([<div>No stories yet</div>]);
     }
@@ -31,7 +35,7 @@ const Home = (props: HomeProps) => {
   return (
     <div>
       <div className="Home-storyInputContainer">
-        <NewStory />
+        <NewStory addNewStory={addNewStory} />
       </div>
       {cards}
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Comment.css";
+import "./SingleComment.css";
 type Comment = {
   create_name: string;
   content: string;

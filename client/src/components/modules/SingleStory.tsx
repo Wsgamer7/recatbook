@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Story.css";
+import "./SingleStory.css";
 type Story = {
   _id: string;
   create_name: string;
